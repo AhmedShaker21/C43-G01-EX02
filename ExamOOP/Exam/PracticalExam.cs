@@ -6,7 +6,27 @@ using System.Threading.Tasks;
 
 namespace ExamOOP.Exam
 {
-    class PracticalExam
+    class PracticalExam:Exam
     {
+        public PracticalExam(int ExamTime, int NumberOfQuestions) : base(ExamTime, NumberOfQuestions)
+        {
+        }
+        public override void ExamResult(TimeSpan ExamTime)
+        {
+            Console.WriteLine("Practical Exam");
+            ProcessExam();
+            Console.Clear();
+            Console.WriteLine("Practical Exam Results:");
+            foreach (var (Question, IdOfStudent) in StudentAnswer)
+            {
+                Question.DisplayQuestionDetails();
+                Console.WriteLine($"Your Answer => {Question.AnswerList[IdOfStudent - 1].AnswerText}");
+                Console.WriteLine($"Correct Answer => {Question.AnswerList[Question.CorrectAnswerId - 1].AnswerText}\n");
+            }
+
+            Console.WriteLine($"Your Grade is {Grade} from {Question.Count * Question[0].QuestionMark}");
+            Console.WriteLine($"Time = {ExamTime}");
+            Console.WriteLine("Thank you");
+        }
     }
 }

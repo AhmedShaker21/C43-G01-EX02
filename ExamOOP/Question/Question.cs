@@ -16,8 +16,10 @@ namespace ExamOOP.Question
         //i change access modifier to Protected Bec when inherit it inherited as Private
         protected string QuestionHeader { get; set; }
         protected string QuestionBody { get; set; }
-        protected int QuestionMark { get; set; }
+        public int QuestionMark { get; set; }
         public List<Answer> AnswerList { get; set; } = new List<Answer>();
+        public int CorrectAnswerId { get; set; }
+
         #endregion
 
         #region Constructor
