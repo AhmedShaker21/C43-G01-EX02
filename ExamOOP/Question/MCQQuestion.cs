@@ -9,7 +9,7 @@ namespace ExamOOP.Question
     internal class MCQQuestion : Question
     {
         #region Constructor
-        public MCQQuestion(string QuestionHeader, string QuestionBody, int QuestionMark) : base(QuestionHeader, QuestionBody, QuestionMark)
+        public MCQQuestion(string QuestionHeader, string QuestionBody, int QuestionMark) : base(QuestionHeader, QuestionBody, QuestionMark, QuestionType.MCQ)
         { }
         #endregion
 

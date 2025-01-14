@@ -10,7 +10,7 @@ namespace ExamOOP.Question
     class TrueOrFalseQuestion:Question
     {
         #region Constructor
-        public TrueOrFalseQuestion(string QuestionHeader, string QuestionBody, int QuestionMark) : base(QuestionHeader, QuestionBody, QuestionMark)
+        public TrueOrFalseQuestion(string QuestionHeader, string QuestionBody, int QuestionMark) : base(QuestionHeader, QuestionBody, QuestionMark, QuestionType.TrueFalse)
         { } 
         #endregion
 

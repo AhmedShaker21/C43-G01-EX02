@@ -14,20 +14,22 @@ namespace ExamOOP.Question
         #region Automatic Properties
         //By Default Properties Access Modifier Public 
         //i change access modifier to Protected Bec when inherit it inherited as Private
-        protected string QuestionHeader { get; set; }
-        protected string QuestionBody { get; set; }
+        public string QuestionHeader { get; set; }
+        public string QuestionBody { get; set; }
         public int QuestionMark { get; set; }
+        public QuestionType Type { get; set; }
         public List<Answer> AnswerList { get; set; } = new List<Answer>();
         public int CorrectAnswerId { get; set; }
 
         #endregion
 
         #region Constructor
-        public Question(string QuestionHeader, string QuestionBody, int QuestionMark)
+        public Question(string QuestionHeader, string QuestionBody, int QuestionMark , QuestionType Type)
         {
             this.QuestionHeader = QuestionHeader;
             this.QuestionBody = QuestionBody;
             this.QuestionMark = QuestionMark;
+            this.Type = Type;
         }
         #endregion
 

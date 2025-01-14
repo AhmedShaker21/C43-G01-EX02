@@ -47,7 +47,10 @@ namespace ExamOOP.Exam
                 } while (!Flag);
                 StudentAnswer.Add((Question, StudentId));
                 if (StudentId == Question.CorrectAnswerId)
-                    Grade += Question.QuestionMark;
+                {
+                    Grade += ((Question.QuestionMark*NumberOfQuestions)/2);
+                }
+       
             }
         }
         #region Abstract Function
