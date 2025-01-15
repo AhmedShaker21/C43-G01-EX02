@@ -131,9 +131,24 @@ namespace ExamOOP
                     #endregion
                 }
                 Console.Clear();
-            } 
+            }
             #endregion
-        
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////    Create Exam Instance    //////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            
+            #region  Create Exam Instance
+            Exam.Exam Exam;
+            if (ExamType == (int)ExamTypeEnum.Practical)
+                Exam = new PracticalExam(ExamTime, NumberOfQuestions);
+            else
+                Exam = new FinalExam(ExamTime, NumberOfQuestions);
+
+            Exam.Question.AddRange(UserListQuestion);
+
+            #endregion
+
         }
     }
 }
