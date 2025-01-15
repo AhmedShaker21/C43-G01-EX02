@@ -34,7 +34,7 @@ namespace ExamOOP
             //////////////////////////////////////////////////////////////////////////////////////////////////////
             ////////////////////////////    Details Of Question Input    /////////////////////////////////////////
             //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
+
             #region Details Of Question Input 
 
             List<Question.Question> UserListQuestion = new List<Question.Question>();
@@ -68,7 +68,7 @@ namespace ExamOOP
                         Console.WriteLine("Invalid input. The question body cannot be empty or whitespace only. Please try again.");
 
                 } while (string.IsNullOrWhiteSpace(QuestionBody));
-                 
+
                 Console.WriteLine("Please enter the question mark:");
                 int QuestionMark;
                 while (!int.TryParse(Console.ReadLine(), out QuestionMark) || QuestionMark <= 0)
@@ -119,7 +119,7 @@ namespace ExamOOP
                     var TrueOrFalseQuestion = new TrueOrFalseQuestion("True/False Question", QuestionBody, QuestionMark);
                     TrueOrFalseQuestion.AnswerList.Add(new Answer(1, "True"));
                     TrueOrFalseQuestion.AnswerList.Add(new Answer(2, "False"));
-                   
+
                     //To enter the ID of the correct answer
                     Console.WriteLine("Please enter the ID of the correct answer (1 for True, 2 for False):");
                     int CorrectAnswerId;
@@ -137,7 +137,7 @@ namespace ExamOOP
             //////////////////////////////////////////////////////////////////////////////////////////////////////
             ////////////////////////////    Create Exam Instance    //////////////////////////////////////////////
             //////////////////////////////////////////////////////////////////////////////////////////////////////
-            
+
             #region  Create Exam Instance
             Exam.Exam Exam;
             if (ExamType == (int)ExamTypeEnum.Practical)
@@ -149,6 +149,34 @@ namespace ExamOOP
 
             #endregion
 
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////    Start Exam    ////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            #region  Start Exam 
+            Console.WriteLine("Do You Want To Start Exam (Y | N)");
+            string MyChouce = Console.ReadKey(true).KeyChar.ToString().ToUpper();
+
+            switch (MyChouce)
+            {
+                case "Y":
+                    Console.Clear();
+                    var StopWatch = Stopwatch.StartNew();
+                    Exam.ExamResult(StopWatch.Elapsed);
+                    return;
+
+                case "N":
+                    Console.Clear();
+                    Console.WriteLine("Exam not started. Exiting.");
+                    return;
+
+                default:
+                    Console.WriteLine("\nInvalid input. Please enter 'Y' for Yes or 'N' for No.");
+                    break;
+                    #endregion
+
+
+            }
         }
     }
 }
