@@ -20,6 +20,8 @@ namespace ExamOOP.Exam
             int QuestionNumber = 1;
             foreach (var (Question, IdOfStudent) in StudentAnswer)
             {
+                //if you want to know Details about Question
+                //Question.DisplayQuestionDetails();
                 Console.WriteLine($"Question {QuestionNumber}: {Question.QuestionBody}");
 
                 Console.WriteLine($"Your Answer => {Question.AnswerList[IdOfStudent - 1].AnswerText}");
