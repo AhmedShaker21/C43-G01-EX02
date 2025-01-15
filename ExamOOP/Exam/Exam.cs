@@ -17,6 +17,7 @@ namespace ExamOOP.Exam
         public List<(Question.Question, int)> StudentAnswer { get; set; } = new List<(Question.Question, int)>();
 
         #endregion
+     
         #region Constructor
         public Exam(int ExamTime, int NumberOfQuestions)
         {
@@ -27,10 +28,13 @@ namespace ExamOOP.Exam
 
         protected void ProcessExam()
         {
+            int QuestionNumber = 1;
             int StudentId;
             bool Flag;
             foreach (var Question in Question)
             {
+                Console.WriteLine($"Question {QuestionNumber}: {Question.QuestionBody}");
+
                 Question.DisplayQuestionDetails();
                 do
                 {
@@ -50,9 +54,10 @@ namespace ExamOOP.Exam
                 {
                     Grade += (Question.QuestionMark);
                 }
-
+                QuestionNumber++;
             }
         }
+
         #region Abstract Function
         public abstract void ExamResult(TimeSpan ExamTime);
 
