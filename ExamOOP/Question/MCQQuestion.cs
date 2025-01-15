@@ -19,7 +19,7 @@ namespace ExamOOP.Question
             Console.WriteLine($"MCQ Question:\tMark {QuestionMark}");
             for (int i = 0; i < AnswerList.Count; i++)
                 Console.WriteLine($"{i + 1}- {AnswerList[i].AnswerText}");
-            
+
         }
         #endregion
     }

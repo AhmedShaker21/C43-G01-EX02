@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamOOP.Exam
 {
-    class PracticalExam:Exam
+    class PracticalExam : Exam
     {
         public PracticalExam(int ExamTime, int NumberOfQuestions) : base(ExamTime, NumberOfQuestions)
         {
@@ -17,11 +17,14 @@ namespace ExamOOP.Exam
             ProcessExam();
             Console.Clear();
             Console.WriteLine("Practical Exam Results:");
+            int QuestionNumber = 1;
             foreach (var (Question, IdOfStudent) in StudentAnswer)
             {
-                Question.DisplayQuestionDetails();
+                Console.WriteLine($"Question {QuestionNumber}: {Question.QuestionBody}");
+
                 Console.WriteLine($"Your Answer => {Question.AnswerList[IdOfStudent - 1].AnswerText}");
                 Console.WriteLine($"Correct Answer => {Question.AnswerList[Question.CorrectAnswerId - 1].AnswerText}\n");
+                QuestionNumber++;
             }
 
             Console.WriteLine($"Your Grade is {Grade} from {Question.Count * Question[0].QuestionMark}");
@@ -30,3 +33,4 @@ namespace ExamOOP.Exam
         }
     }
 }
+

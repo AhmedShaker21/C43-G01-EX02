@@ -12,10 +12,10 @@ namespace ExamOOP.Subject
         public string SubjectName { get; set; }
         public Exam.Exam Exam { get; set; }
 
-        public Subject(int id, string name)
+        public Subject(int SubjectId, string SubjectName)
         {
-            SubjectId = id;
-            SubjectName = name;
+            this.SubjectName = SubjectName;
+            this.SubjectId = SubjectId;
         }
 
         public void CreateExam(Exam.Exam exam)
@@ -24,18 +24,12 @@ namespace ExamOOP.Subject
         }
 
         public object Clone()
-        {
-            return new Subject(SubjectId, SubjectName) { Exam = Exam };
-        }
+            => new Subject(SubjectId, SubjectName) { Exam = Exam };
 
         public int CompareTo(Subject other)
-        {
-            return SubjectName.CompareTo(other.SubjectName);
-        }
+            => SubjectName.CompareTo(other.SubjectName);
 
         public override string ToString()
-        {
-            return $"Subject: {SubjectName}, ID: {SubjectId}";
-        }
+            => $"Subject: {SubjectName}\nID: {SubjectId}";
     }
 }

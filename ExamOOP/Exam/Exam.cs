@@ -48,9 +48,9 @@ namespace ExamOOP.Exam
                 StudentAnswer.Add((Question, StudentId));
                 if (StudentId == Question.CorrectAnswerId)
                 {
-                    Grade += ((Question.QuestionMark*NumberOfQuestions)/2);
+                    Grade += (Question.QuestionMark);
                 }
-       
+
             }
         }
         #region Abstract Function

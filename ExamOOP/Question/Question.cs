@@ -13,7 +13,6 @@ namespace ExamOOP.Question
         /// Design a Class to represent the Question Object,
         #region Automatic Properties
         //By Default Properties Access Modifier Public 
-        //i change access modifier to Protected Bec when inherit it inherited as Private
         public string QuestionHeader { get; set; }
         public string QuestionBody { get; set; }
         public int QuestionMark { get; set; }
@@ -24,7 +23,7 @@ namespace ExamOOP.Question
         #endregion
 
         #region Constructor
-        public Question(string QuestionHeader, string QuestionBody, int QuestionMark , QuestionType Type)
+        public Question(string QuestionHeader, string QuestionBody, int QuestionMark, QuestionType Type)
         {
             this.QuestionHeader = QuestionHeader;
             this.QuestionBody = QuestionBody;
@@ -34,10 +33,10 @@ namespace ExamOOP.Question
         #endregion
 
         #region Abstract Question Function
-        public abstract void DisplayQuestionDetails(); 
+        public abstract void DisplayQuestionDetails();
         #endregion
 
         public override string ToString()
-            => $"The Question Header: {QuestionHeader}\nThe Question Body: {QuestionBody}\nThe Question Mark {QuestionMark}";
+            => $"{QuestionBody}";
     }
 }

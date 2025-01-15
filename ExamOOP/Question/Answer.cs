@@ -10,7 +10,7 @@ namespace ExamOOP
     {
         #region Automatic Properties
         public int AnswerId { get; set; }
-        public string AnswerText { get; set; } 
+        public string AnswerText { get; set; }
         #endregion
 
         #region Constructor
@@ -18,7 +18,7 @@ namespace ExamOOP
         {
             this.AnswerId = AnswerId;
             this.AnswerText = AnswerText;
-        } 
+        }
         #endregion
     }
 }
